@@ -4,7 +4,7 @@ require_once 'autoload.php';
 
 use Alura\Banco\Modelo\Conta\{Titular, ContaCorrente, ContaPoupanca};
 use Alura\Banco\Modelo\{Endereco, CPF};
-use Alura\Banco\Modelo\Funcionario\{Gerente, Diretor, Desenvolvedor};
+use Alura\Banco\Modelo\Funcionario\{Gerente, Diretor, Desenvolvedor, EditorVideo};
 use Alura\Banco\Servicos\ControladorBonificacoes;
 
 /*
@@ -33,12 +33,14 @@ echo $conta1->exibirSaldo().PHP_EOL;
 //var_dump($Mariazinha);
 */
 
-$funcionario1 = new Gerente('José', new CPF('428.447.784-58'), 'Assistente de Marketing',2000);
-$funcionario2 = new Diretor('Maria', new CPF('488.578.447-44'), 'Assistente de Marketing',2500);
+$funcionario1 = new Gerente('José', new CPF('428.447.784-58'), 2000);
+$funcionario2 = new Diretor('Maria', new CPF('488.578.447-44'), 2500);
+$funcionario3 = new EditorVideo('Paulo', new CPF('428.447.787-87'),1000);
 //$funcionario1->alterarNomeFuncionario('Vinicius');
 $controlador = new ControladorBonificacoes();
 $controlador->addBonificacao($funcionario1);
 $controlador->addBonificacao($funcionario2);
+$controlador->addBonificacao($funcionario3);
 
 echo $controlador->exibirTotal();
 
