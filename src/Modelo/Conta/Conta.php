@@ -2,10 +2,10 @@
 
 namespace Alura\Banco\Modelo\Conta;
 
-class Conta
+abstract class Conta
 {
     private $titular;
-    private $saldo;
+    protected $saldo;
     private static $numeroDeContas = 0; // Atributo da Classe Conta e não de cada objeto
 
     public function __construct(Titular $titular) // Construtor
@@ -23,7 +23,7 @@ class Conta
 
     public function sacar(float $valorASacar)
     {
-        $tarifaSaque = $valorASacar * 0.05;
+        $tarifaSaque = $valorASacar * $this->percentualTarifa();
         $valorSaque = $valorASacar + $tarifaSaque;
 
         if ($valorSaque > $this->saldo) {
@@ -74,5 +74,8 @@ class Conta
     {   
         return self::$numeroDeContas; // self = classe Conta
     }
+
+    abstract protected function percentualTarifa(): float;
+    
 }
 
