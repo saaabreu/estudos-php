@@ -1,14 +1,17 @@
 <?php 
 
-require_once 'src/Conta.php';
-require_once 'src/Pessoa.php';
-require_once 'src/Funcionario.php';
-require_once 'src/Titular.php';
-require_once 'src/Endereco.php';
-require_once 'src/CPF.php';
+require_once 'autoload.php';
+
+use Alura\Banco\Modelo\Conta\Titular;
+use Alura\Banco\Modelo\Endereco;
+use Alura\Banco\Modelo\CPF;
+use Alura\Banco\Modelo\Conta\Conta;
+use Alura\Banco\Modelo\Funcionario;
+
+
+$endereco = new Endereco('São Paulo', 'Bairro dos números', 'Rua dois', '1715');
 
 /*
-$endereco = new Endereco('São Paulo', 'Bairro dos números', 'Rua dois', '1715');
 $conta1 = new Conta( new Titular(new CPF('428.477.487-88'), 'Aninha',$endereco));
 $conta2 = new Conta( new Titular(new CPF('455.477.888-87'), 'Joazinho',$endereco));
 
@@ -26,6 +29,6 @@ echo Conta::exibirNumerodeContas();
 var_dump($Mariazinha);
 */
 
-$funcionario1 = new Funcionario('José', new CPF('428.447.784-55'), 'Assistente de Marketing');
+$funcionario1 = new Funcionario('José', new CPF('428.447.784-558'), 'Assistente de Marketing');
 $funcionario1->alterarNomeFuncionario('Vinicius');
 var_dump($funcionario1);
