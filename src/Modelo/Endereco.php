@@ -36,4 +36,15 @@ class Endereco
     {
         return $this->numero;
     }
+
+    public function __toString(): string
+    {
+        return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
+    }
+
+    public function __get(string $nomeAtributo)
+    {
+        $metodo = 'exibir' . ucfirst($nomeAtributo);
+        return $this->$metodo();
+    }
 }

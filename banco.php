@@ -8,10 +8,12 @@ use Alura\Banco\Modelo\Funcionario\{Gerente, Diretor, Desenvolvedor, EditorVideo
 use Alura\Banco\Servicos\Autenticador;
 use Alura\Banco\Servicos\ControladorBonificacoes;
 
-/*
+
 $endereco = new Endereco('São Paulo', 'Bairro dos números', 'Rua dois', '1715');
 
+echo $endereco->rua;
 
+/*
 $conta1 = new ContaPoupanca( new Titular(new CPF('428.477.487-88'), 'Aninha',$endereco));
 $conta2 = new Conta( new Titular(new CPF('455.477.888-87'), 'Joazinho',$endereco));
 
@@ -33,7 +35,7 @@ echo $conta1->exibirSaldo().PHP_EOL;
 //echo Conta::exibirNumerodeContas();
 //var_dump($Mariazinha);
 */
-
+/*
 $funcionario1 = new Gerente('José', new CPF('428.447.784-58'), 2000);
 $funcionario2 = new Diretor('Maria', new CPF('488.578.447-44'), 2500);
 $funcionario3 = new EditorVideo('Paulo', new CPF('428.447.787-87'),1000);
@@ -49,3 +51,4 @@ $autenticador->tentaLogin($funcionario1, '432');
 //echo $controlador->exibirTotal();
 
 //var_dump($funcionario1);
+*/
