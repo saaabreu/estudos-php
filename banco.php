@@ -5,6 +5,7 @@ require_once 'autoload.php';
 use Alura\Banco\Modelo\Conta\{Titular, ContaCorrente, ContaPoupanca};
 use Alura\Banco\Modelo\{Endereco, CPF};
 use Alura\Banco\Modelo\Funcionario\{Gerente, Diretor, Desenvolvedor, EditorVideo};
+use Alura\Banco\Servicos\Autenticador;
 use Alura\Banco\Servicos\ControladorBonificacoes;
 
 /*
@@ -42,6 +43,9 @@ $controlador->addBonificacao($funcionario1);
 $controlador->addBonificacao($funcionario2);
 $controlador->addBonificacao($funcionario3);
 
-echo $controlador->exibirTotal();
+$autenticador = new Autenticador();
+$autenticador->tentaLogin($funcionario2, '1234');
+$autenticador->tentaLogin($funcionario1, '432');
+//echo $controlador->exibirTotal();
 
 //var_dump($funcionario1);
