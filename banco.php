@@ -9,9 +9,9 @@ use Alura\Banco\Servicos\Autenticador;
 use Alura\Banco\Servicos\ControladorBonificacoes;
 
 
-$endereco = new Endereco('São Paulo', 'Bairro dos números', 'Rua dois', '1715');
+//$endereco = new Endereco('São Paulo', 'Bairro dos números', 'Rua dois', '1715');
 
-echo $endereco->rua;
+//echo $endereco->rua;
 
 /*
 $conta1 = new ContaPoupanca( new Titular(new CPF('428.477.487-88'), 'Aninha',$endereco));
@@ -35,11 +35,14 @@ echo $conta1->exibirSaldo().PHP_EOL;
 //echo Conta::exibirNumerodeContas();
 //var_dump($Mariazinha);
 */
-/*
+
 $funcionario1 = new Gerente('José', new CPF('428.447.784-58'), 2000);
 $funcionario2 = new Diretor('Maria', new CPF('488.578.447-44'), 2500);
 $funcionario3 = new EditorVideo('Paulo', new CPF('428.447.787-87'),1000);
+
+echo $funcionario1->cpf;
 //$funcionario1->alterarNomeFuncionario('Vinicius');
+/*
 $controlador = new ControladorBonificacoes();
 $controlador->addBonificacao($funcionario1);
 $controlador->addBonificacao($funcionario2);
